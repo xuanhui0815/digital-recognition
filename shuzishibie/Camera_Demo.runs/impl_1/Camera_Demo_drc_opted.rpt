@@ -1,0 +1,53 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Sun Jul 26 16:06:51 2020
+| Host         : DESKTOP-8D0QN4O running 64-bit major release  (build 9200)
+| Command      : report_drc -file Camera_Demo_drc_opted.rpt -pb Camera_Demo_drc_opted.pb -rpx Camera_Demo_drc_opted.rpx
+| Design       : Camera_Demo
+| Device       : xc7s15ftgb196-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++-----------+----------+--------------------------+------------+
+| Rule      | Severity | Description              | Violations |
++-----------+----------+--------------------------+------------+
+| REQP-1712 | Error    | Input clock driver       | 1          |
+| UTLZ-1    | Error    | Resource utilization     | 1          |
+| BUFC-1    | Warning  | Input Buffer Connections | 1          |
++-----------+----------+--------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+REQP-1712#1 Error
+Input clock driver  
+Unsupported PLLE2_ADV connectivity. The signal MIPI_Trans_Driver/camera_clock/inst/clk_in1 on the MIPI_Trans_Driver/camera_clock/inst/plle2_adv_inst/CLKIN1 pin of MIPI_Trans_Driver/camera_clock/inst/plle2_adv_inst with COMPENSATION mode ZHOLD must be driven by a clock capable IO.
+Related violations: <none>
+
+UTLZ-1#1 Error
+Resource utilization  - PBlock:ROOT
+PLLE2_ADV over-utilized in Top Level Design (This design requires more PLLE2_ADV cells than are available in the target device. This design requires 3 of such cell types but only 2 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)ROOT
+Related violations: <none>
+
+BUFC-1#1 Warning
+Input Buffer Connections  
+Input buffer Camera_IIC_SDA_IOBUF/IBUF (in Camera_IIC_SDA_IOBUF macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+
